@@ -89,13 +89,13 @@ At this point we introduce the *Logarithmic Spiderweb* (LS) topology as our netw
 The LS topology limits the number of peers for any single node to $2N – 1$. Using the PRG self-organising algorithm described in the next section, each node will have approximately $p$ peers where $p$ is given by:
 
 $$
-p = 2 log_2 (n)
+p = 2 log_2 (n - 1)
 $$
 
-and $n$ is the number of nodes on the network. We can manipulate this formula to get an approximation of the number of nodes on the network:
+and $n$ is the total number of nodes on the network. We can manipulate this formula to get an approximation of the number of nodes on the network given $p$:
 
 $$
-n = 2^{\frac{p}{2}}
+n = 2^{\frac{p}{2}} + 1
 $$
 
 In a complete and perfect LS arrangement, that is: where every possible node ID is assigned to exactly one node, and each of these nodes is connected to it’s “ideal” peers, we can compute the overall number of connections:
