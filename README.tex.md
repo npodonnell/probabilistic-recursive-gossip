@@ -34,7 +34,7 @@ For all of the examples, unless otherwise stated, we set $N = 8$.
 
 Before discussing the network topology, We define the modular distance function. Every node and resource on the network exists on the circumference of an imaginary circle, with $0$ located at the top of the circle, $2^{N–1}$ at the bottom, $2^{N–2}$ at the centre right,  $3 \times 2^{N–2}$ at the centre left, and all other IDs spaced evenly between them. $2^N$ would be located at the same position as zero except it’s too high. Any number less than 0 or greater than $2^N – 1$ is reduced modulo $2^N$ so that it may appear on the circle.
 
-The modular distance, or *moddist*, between any two IDs, $x$ and $y$ on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
+The modular distance, $moddist$, between any two IDs, $x$ and $y$ on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
 
 $$
 moddist(x, y) = \left\{ 
@@ -48,7 +48,7 @@ $$
 
 ## 1.1. Logarithmic Modular Distance
 
-Next we define the logarithmic modular distance funtion, or logdist. This is nothing but the base-2 logarithm of the value of moddist. Note that logdist is undefined if x = y.
+Next we define the logarithmic modular distance funtion, $logdist$. This is nothing but the base-2 logarithm of the value of $moddist$. Note that $logdist$ is undefined if $x = y$.
 
 $$
 logdist(x, y) = log_2 moddist(x, y), x \ne y
