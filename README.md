@@ -38,6 +38,8 @@ The modular distance, <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert
 
 <p align="center"><img src="/tex/fd154d69e4da7582688d5b8e55d6fb87.svg?invert_in_darkmode&sanitize=true" align=middle width=470.39956589999997pt height=78.93483675pt/></p>
 
+The intuition is that <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/> will be positive if we move a little bit clockwise, or negative if we move a little bit anti-clockwise, however if we move more than half-way around the circle, the value of <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/> "flips around" because the shortest route is now around the other side of the circle and the sign changes.
+
 ## 1.1. Logarithmic Modular Distance
 
 Next we define the logarithmic modular distance funtion, <img src="/tex/752352a4a80076e0726421b751b1797e.svg?invert_in_darkmode&sanitize=true" align=middle width=49.4875194pt height=22.831056599999986pt/>. This is nothing but the base-2 logarithm of the value of <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/>. Note that <img src="/tex/752352a4a80076e0726421b751b1797e.svg?invert_in_darkmode&sanitize=true" align=middle width=49.4875194pt height=22.831056599999986pt/> is undefined if <img src="/tex/7defd50098be0a3d3e6d4bf5ca764b65.svg?invert_in_darkmode&sanitize=true" align=middle width=39.96184334999999pt height=14.15524440000002pt/>.
