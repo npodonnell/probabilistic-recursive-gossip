@@ -73,11 +73,11 @@ At this point we introduce the *Logarithmic Spiderweb* (LS) topology as our netw
 
 The LS topology limits the number of peers for any single node to <img src="/tex/c6d581fab590154cd1835b0234c9bc1a.svg?invert_in_darkmode&sanitize=true" align=middle width=39.65759654999999pt height=22.465723500000017pt/>. Using the PRG self-organising algorithm described in the next section, each node will have approximately <img src="/tex/2ec6e630f199f589a2402fdf3e0289d5.svg?invert_in_darkmode&sanitize=true" align=middle width=8.270567249999992pt height=14.15524440000002pt/> peers where <img src="/tex/2ec6e630f199f589a2402fdf3e0289d5.svg?invert_in_darkmode&sanitize=true" align=middle width=8.270567249999992pt height=14.15524440000002pt/> is given by:
 
-<p align="center"><img src="/tex/738645f65ba5a116fff2a6d623ef8672.svg?invert_in_darkmode&sanitize=true" align=middle width=89.4711543pt height=16.438356pt/></p>
+<p align="center"><img src="/tex/43343377f75fd98185d0cf4c52acea4b.svg?invert_in_darkmode&sanitize=true" align=middle width=117.78155565pt height=16.438356pt/></p>
 
-and <img src="/tex/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width=9.86687624999999pt height=14.15524440000002pt/> is the number of nodes on the network. We can manipulate this formula to get an approximation of the number of nodes on the network:
+and <img src="/tex/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width=9.86687624999999pt height=14.15524440000002pt/> is the total number of nodes on the network. We can manipulate this formula to get an approximation of the number of nodes on the network given <img src="/tex/2ec6e630f199f589a2402fdf3e0289d5.svg?invert_in_darkmode&sanitize=true" align=middle width=8.270567249999992pt height=14.15524440000002pt/>:
 
-<p align="center"><img src="/tex/725fb7e1b5cc69c3b2f082ece41f4739.svg?invert_in_darkmode&sanitize=true" align=middle width=48.0561213pt height=15.63926595pt/></p>
+<p align="center"><img src="/tex/e9853dfe3fb70e20bce3902ac364a0cf.svg?invert_in_darkmode&sanitize=true" align=middle width=79.1610336pt height=17.00913885pt/></p>
 
 In a complete and perfect LS arrangement, that is: where every possible node ID is assigned to exactly one node, and each of these nodes is connected to it’s “ideal” peers, we can compute the overall number of connections:
 
