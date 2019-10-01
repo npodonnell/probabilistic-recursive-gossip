@@ -46,6 +46,8 @@ moddist(x, y) = \left\{
           \end{array}\right.
 $$
 
+The intuition is that $moddist$ will be positive if we move a little bit clockwise, or negative if we move a little bit anti-clockwise, however if we move more than half-way around the circle, the value of $moddist$ "flips around" because the shortest route is now around the other side of the circle and the sign changes.
+
 ## 1.1. Logarithmic Modular Distance
 
 Next we define the logarithmic modular distance funtion, $logdist$. This is nothing but the base-2 logarithm of the value of $moddist$. Note that $logdist$ is undefined if $x = y$.
