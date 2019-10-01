@@ -107,7 +107,7 @@ $$
 \text{Overall number of connections}: 2^N(N – 1)
 $$
 
-The ideal peers of a node are the nodes whose IDs are exactly $2^i$  away from it where $i ∈ \{0...N – 1\}$, modulo $2N$. So if a node’s id is $x$, its ideal peers are:
+The ideal peers of a node are the nodes whose IDs are exactly $2^i$  away from it where $i \in \{0...N – 1\}$, modulo $2N$. So if a node’s id is $x$, its ideal peers are:
 
 $$
 \{(x + 2^0) \mod 2^N, (x – 2^0) \mod 2^N, (x + 2^1) \mod 2^N, (x – 2^1) \mod 2^N, \cdots , (x + 2^{N – 1}) \mod 2^N\}
