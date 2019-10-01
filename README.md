@@ -11,7 +11,7 @@ Over the past 20 years, peer-to-peer (P2P) networks have become very popular and
 
 In this paper I present a generic design for peer-to-peer networks which is logarithmically scalable and allows boundless growth of information harboured in the system as a whole, by making each node responsible for a subset of resources, and ensuring that new resources and state-changes pertaining to those resources are routed to the most appropriate nodes in a timely and reliable manner.
 
-First we will discuss a numbering system for tagging each node and resource on the P2P network with a unique ID number such that no central authority is required for dispatching ID numbers, yet no two nodes or resources are likely to share the same ID. We we will then discuss an algorithm wherein each node connects preferably to peers with certain IDs over others, forming a topology where an individual node can reach any other node on the network with minimal hops. Next, we describe an algorithm which, when run on the nodes, allows this topology to flourish, ensuring quick integration of new nodes into the fabric, and that any breaks in the topology caused by nodes suddenly leaving, are quickly healed. Finally we present an algorithm for propogating state-changes over this topology that is fast, efficient, accurate, fault-tolerant, and scalable.
+First we will discuss a numbering system for tagging each node and resource on the P2P network with a unique ID number such that no central authority is required for dispatching ID numbers, yet no two nodes or resources are likely to share the same ID. We we will then discuss an algorithm wherein each node connects preferably to peers with certain IDs over others, forming a topology where a node can reach any other node on the network with minimal hops. Next, we describe an algorithm which, when run on the nodes, allows this topology to flourish, ensuring quick integration of new nodes into the fabric, and that any breaks in the topology caused by nodes suddenly leaving, are quickly healed. Finally we present an algorithm for propogating state-changes over this topology that is fast, efficient, accurate, fault-tolerant, and scalable.
 
 ### 1. Identification of Nodes and Resources
 
@@ -89,4 +89,4 @@ We leave out <img src="/tex/0e2682347ee3229716232c0bfcadb82d.svg?invert_in_darkm
 
 <p align="center"><img src="/tex/e608a551760989e404e84116d45fea89.svg?invert_in_darkmode&sanitize=true" align=middle width=381.73548435pt height=16.438356pt/></p>
 
-Encouraging nodes to connect to peers with IDs close to these ideal IDs means a particular node can send a message to any other node on the network, even if not directly connected, with a reasonable number of hops. 
+Encouraging nodes to connect to peers with IDs close to these ideal IDs means a node can send a message to any other node on the network, even if not directly connected, with a reasonable number of hops. 
