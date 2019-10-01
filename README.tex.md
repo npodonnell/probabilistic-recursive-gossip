@@ -32,16 +32,16 @@ For all of the examples, unless otherwise stated, we set $N = 8$.
 
 ## 1.1. Modular Distance
 
-Before I begin discussing the network topology, I must define the modular distance function. Every node and resource on the network exists on the circumference of an imaginary circle, with 0 located at the top of the circle, 2N–1 at the bottom, 2N–2 at the centre right,  3 × 2N–2 at the centre left, and all other IDs spaced evenly between them. 2N would be located at the same position as zero except it’s too high. Any number less than 0 or greater than 2N – 1 is reduced modulo 2N so that it may appear on the circle.
+Before I begin discussing the network topology, I must define the modular distance function. Every node and resource on the network exists on the circumference of an imaginary circle, with $0$ located at the top of the circle, $2^{N–1}$ at the bottom, $2^{N–2}$ at the centre right,  $3 \times 2^{N–2}$ at the centre left, and all other IDs spaced evenly between them. $2^N$ would be located at the same position as zero except it’s too high. Any number less than 0 or greater than $2^N – 1$ is reduced modulo $2^N$ so that it may appear on the circle.
 
-The modular distance, or *moddist*, between any two IDs, x and y on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
+The modular distance, or *moddist*, between any two IDs, $x$ and $y$ on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
 
 $$
 moddist(x, y) = \left\{ 
          \begin{array}{l l}
             y - x & \quad \text{if }-(2^{N - 1}) < y - x < 2^{N - 1}\\
             2^N + y - x & \quad \text{if }y - x \le -(2^{N - 1})\\
-            -(2^N + x) + y & \quad \text{if }y - x \ge 2^{N - 1}\\
+            y - (2^N + x) & \quad \text{if }y - x \ge 2^{N - 1}\\
             0 & \quad \text{if } x = y\\
           \end{array}\right.
 $$
