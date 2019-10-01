@@ -21,8 +21,8 @@ Unlike centralized networks, P2P networks have no authority responsible for assi
 
 One strategy for choosing an ID that’s probably unique is to simply use a massive random number as the ID. A number so large that the chances are negligable that any other node has chosen that number. We will use this approach as our method of ID assignment to both nodes and resouces. For both node IDs and resource IDs, we need enough bits in the ID to ensure:
 
-1. We will never run out of IDs for nodes or resources.
-2. We will never randomly choose the same ID twice.
+1. We will never run out of IDs
+2. We will never randomly choose the same ID twice
 
 We will use the same number of bits for both node IDs and resource IDs because we want certain resources to have an affinity to certain nodes, specifically those nodes who’s IDs are numerically close to that of the resources. Finally we would like for both node IDs and resource IDs to be evenly distributed. If we choose a random number modulo $2^{\text{Number of bits}}$, these needs are satisfied.
 
@@ -32,7 +32,7 @@ For all of the examples, unless otherwise stated, we set $N = 8$.
 
 ## 1.1. Modular Distance
 
-Before I begin discussing the network topology, I must define the modular distance function. Every node and resource on the network exists on the circumference of an imaginary circle, with $0$ located at the top of the circle, $2^{N–1}$ at the bottom, $2^{N–2}$ at the centre right,  $3 \times 2^{N–2}$ at the centre left, and all other IDs spaced evenly between them. $2^N$ would be located at the same position as zero except it’s too high. Any number less than 0 or greater than $2^N – 1$ is reduced modulo $2^N$ so that it may appear on the circle.
+Before discussing the network topology, We define the modular distance function. Every node and resource on the network exists on the circumference of an imaginary circle, with $0$ located at the top of the circle, $2^{N–1}$ at the bottom, $2^{N–2}$ at the centre right,  $3 \times 2^{N–2}$ at the centre left, and all other IDs spaced evenly between them. $2^N$ would be located at the same position as zero except it’s too high. Any number less than 0 or greater than $2^N – 1$ is reduced modulo $2^N$ so that it may appear on the circle.
 
 The modular distance, or *moddist*, between any two IDs, $x$ and $y$ on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
 
