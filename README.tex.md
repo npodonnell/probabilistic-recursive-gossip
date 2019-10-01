@@ -1,6 +1,6 @@
 
 # <center>PROBABALISTIC RECURSIVE GOSSIP</center>
-<center>A strategy for efficient propogation of state-changes on a peer-to-peer network</center>
+<center>A strategy for efficient propogation of state-changes over a peer-to-peer network</center>
 
  *<center>By N. P. O’Donnell, 2019</center>*
 
