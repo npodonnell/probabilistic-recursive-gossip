@@ -77,8 +77,10 @@ This is a reliable way of getting the information “out there” about the new 
 In addition, it’s not always feasible for a node to connect to as many nodes as possible, because there can be penalties in the underlying transport mechanism for each new connction, which causes an O(N) or worse cost in terms of memory, bandwidth and CPU usage. A good example of this is TCP, where each TCP connection needs to send a “keep-alive” on a regular cadence to all it’s active connections, even if they’re idle. Ideally we’d like to have a predictable upper limit on the number of connections we maintain, which is O(1) in the number of nodes.
 
 At this point we introduce the *Logarithmic Spiderweb* (LS) topology as our network topology of choice for connecting together the nodes on our P2P network. 
-|![alt text](./img/unstructured_p2p.png)|![alt text](./img/4_bit_node_fullmesh.png)|![alt text](./img/4_bit_node_3.png) |
-|:---------|:---------------------------|:----|
+
+
+|![](./img/unstructured_p2p.png)|![](./img/4_bit_node_fullmesh.png)|![](./img/4_bit_node_3.png)|
+|:-|:-|:-|
 |*<center>Unstructured P2P network, e.g. Bitcoin</center>*|*<center>Complete LS network with N = 4</center>*|*<center>Same LS network showing node 3’s peers</center>*|
 
 The LS topology limits the number of peers for any single node to $2N – 1$. Using the PRG self-organising algorithm described in the next section, each node will have approximately $p$ peers where $p$ is given by:
