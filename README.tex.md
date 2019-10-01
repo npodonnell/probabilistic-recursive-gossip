@@ -24,7 +24,7 @@ One strategy for choosing an ID that’s probably unique is to simply use a mass
 1. We will never run out of IDs for nodes or resources.
 2. We will never randomly choose the same ID twice.
 
-We will use the same number of bits for both node IDs and resource IDs because we want certain resources to have an affinity to certain nodes, specifically those nodes who’s IDs are numerically close to that of the resources. Finally we would like for both node IDs and resource IDs to be evenly distributed. If we choose a random number modulo 2Number of bits, these criteria are met.
+We will use the same number of bits for both node IDs and resource IDs because we want certain resources to have an affinity to certain nodes, specifically those nodes who’s IDs are numerically close to that of the resources. Finally we would like for both node IDs and resource IDs to be evenly distributed. If we choose a random number modulo $2^{\text{Number of bits}}$, these needs are satisfied.
 
 For the examples explained herein we will use a trivial 8 bits for node and resource IDs and pretend that there are never any collisions. For real P2P networks, 8 bits is far too low. 256 or 512 bits is more appropriate. We use the capital letter “N” to denote the number of bits. Therefore, in the PRG system, each node and each resource will have an N-bit ID, giving a range of  [0, 2N – 1]. 
 
