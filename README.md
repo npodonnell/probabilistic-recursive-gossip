@@ -7,7 +7,9 @@
 
 ## Abstract
 
-Over the past 20 years, peer-to-peer (P2P) networks have become very popular and continue to be an active area of research. While P2P networks such as Bitcoin, IPFS, FreeNet, and eMule serve different purposes and have different designs, they all share some common requirements: they need to be able to organise themselves without a central authority, discover new nodes joining the network, detect when nodes leave the network, and each participant maintain a sensible number of connections to its peers, such that it may get a reasonable service, making best use of its bandwidth, memory and CPU resources. They also need to be able to store information, or files, and transmit state changes about them. Several designs have been proposed for achieving these goals in a generic way including Pastry, Tapestry, Chord and CAN.
+Over the past 20 years, peer-to-peer (P2P) networks have become very popular and continue to be an active area of research. While P2P networks such as Bitcoin, IPFS, FreeNet, and eMule serve different purposes and have different designs, they all share some common requirements: they need to be able to organise themselves without a central authority, discover new nodes joining the network, detect when nodes leave the network, and each participant maintain a sensible number of connections to its peers, such that it may get a reasonable service, making best use of its bandwidth, memory and CPU resources. 
+
+P2P networks also share information or files, and transmit state changes about them. Several designs have been proposed for achieving these goals in a generic way including Pastry, Tapestry, Chord and CAN.
 
 In this paper I present a generic design for peer-to-peer networks which is logarithmically scalable and allows boundless growth of information harboured in the system as a whole, by making each node responsible for a subset of resources, and ensuring that new resources and state-changes pertaining to those resources are routed to the most appropriate nodes in a timely and reliable manner.
 
@@ -36,7 +38,7 @@ Before discussing the network topology, We define the modular distance function.
 
 The modular distance, <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/>, between any two IDs, <img src="/tex/332cc365a4987aacce0ead01b8bdcc0b.svg?invert_in_darkmode&sanitize=true" align=middle width=9.39498779999999pt height=14.15524440000002pt/> and <img src="/tex/deceeaf6940a8c7a5a02373728002b0f.svg?invert_in_darkmode&sanitize=true" align=middle width=8.649225749999989pt height=14.15524440000002pt/> on the circle, is the shortest distance along the circumference of the circle, clockwise or anticlockwise, from one ID to the other.
 
-<p align="center"><img src="/tex/fd154d69e4da7582688d5b8e55d6fb87.svg?invert_in_darkmode&sanitize=true" align=middle width=470.39956589999997pt height=78.93483675pt/></p>
+<p align="center"><img src="/tex/bdfa68a1829c52e06880386ae2c901dd.svg?invert_in_darkmode&sanitize=true" align=middle width=470.39956589999997pt height=59.20870889999999pt/></p>
 
 The intuition is that <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/> will be positive if we move a little bit clockwise, or negative if we move a little bit anti-clockwise, however if we move more than half-way around the circle, the value of <img src="/tex/9d9b7d3c73b53eee6d7ccdcc892a4950.svg?invert_in_darkmode&sanitize=true" align=middle width=58.81788164999999pt height=22.831056599999986pt/> "flips around" because the shortest route is now around the other side of the circle and the sign changes.
 
