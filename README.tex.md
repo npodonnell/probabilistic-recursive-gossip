@@ -7,7 +7,9 @@
 
 ## Abstract
 
-Over the past 20 years, peer-to-peer (P2P) networks have become very popular and continue to be an active area of research. While P2P networks such as Bitcoin, IPFS, FreeNet, and eMule serve different purposes and have different designs, they all share some common requirements: they need to be able to organise themselves without a central authority, discover new nodes joining the network, detect when nodes leave the network, and each participant maintain a sensible number of connections to its peers, such that it may get a reasonable service, making best use of its bandwidth, memory and CPU resources. They also need to be able to store information, or files, and transmit state changes about them. Several designs have been proposed for achieving these goals in a generic way including Pastry, Tapestry, Chord and CAN.
+Over the past 20 years, peer-to-peer (P2P) networks have become very popular and continue to be an active area of research. While P2P networks such as Bitcoin, IPFS, FreeNet, and eMule serve different purposes and have different designs, they all share some common requirements: they need to be able to organise themselves without a central authority, discover new nodes joining the network, detect when nodes leave the network, and each participant maintain a sensible number of connections to its peers, such that it may get a reasonable service, making best use of its bandwidth, memory and CPU resources. 
+
+P2P networks also share information or files, and transmit state changes about them. Several designs have been proposed for achieving these goals in a generic way including Pastry, Tapestry, Chord and CAN.
 
 In this paper I present a generic design for peer-to-peer networks which is logarithmically scalable and allows boundless growth of information harboured in the system as a whole, by making each node responsible for a subset of resources, and ensuring that new resources and state-changes pertaining to those resources are routed to the most appropriate nodes in a timely and reliable manner.
 
@@ -39,10 +41,9 @@ The modular distance, $moddist$, between any two IDs, $x$ and $y$ on the circle,
 $$
 moddist(x, y) = \left\{ 
          \begin{array}{l l}
-            y - x & \quad \text{if }-(2^{N - 1}) < y - x < 2^{N - 1}\\
-            2^N + y - x & \quad \text{if }y - x \le -(2^{N - 1})\\
-            y - (2^N + x) & \quad \text{if }y - x \ge 2^{N - 1}\\
-            0 & \quad \text{if } x = y\\
+            y - x & \quad \text{if }-(2^{N - 1}) \le y - x \le 2^{N - 1}\\
+            2^N + y - x & \quad \text{if }y - x < -(2^{N - 1})\\
+            y - (2^N + x) & \quad \text{if }y - x > 2^{N - 1}\\
           \end{array}\right.
 $$
 
