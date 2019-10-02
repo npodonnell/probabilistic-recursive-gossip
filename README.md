@@ -97,7 +97,7 @@ Encouraging nodes to connect to peers with IDs close to these ideal IDs means a 
 
 ## 3. Self-Organizing Algorithm
 
-Whenever a new node joins a P2P network, it needs a way of finding out about other nodes already on the network. Usually the P2P software will ship with a list of hard-coded "seed" nodes, which the joining node can initially connect to. From there, the new node can ask its peers about their peers, then connect to them, and so forth.
+When a new node joins a P2P network, it needs a way of finding out about other nodes already on the network. Usually the P2P software will ship with a list of hard-coded "seed" nodes, which the joining node can initially connect to. From there, the new node can ask its peers about their peers, then connect to them, and so forth.
 
 In LS networks a similar method is used for bootstrapping, but nodes will prefer to connect to certain peers over others. In particular they favor peers who's IDs are most similar to the node's ideal peers; more precisely the peers which have the smallest logarithmic distance to one of the node's ideal IDs.
 
@@ -111,7 +111,3 @@ When a node <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmo
 2. Snaps to one of <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width=14.99998994999999pt height=22.465723500000017pt/>'s occupied slots but is closer to the ideal ID than the current occupier
 
 In both these cases, <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width=14.99998994999999pt height=22.465723500000017pt/> will try to connect to <img src="/tex/ef0de0b48cb187b636ae34b0aea8c1db.svg?invert_in_darkmode&sanitize=true" align=middle width=15.20454704999999pt height=22.465723500000017pt/>  and if successful, close the connection to the previous occupier if there was one, replacing it with <img src="/tex/ef0de0b48cb187b636ae34b0aea8c1db.svg?invert_in_darkmode&sanitize=true" align=middle width=15.20454704999999pt height=22.465723500000017pt/>. Whenever a node successfully connects to a new peer it informs all its other peers of the new connection.
-
-Before a node <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width=14.99998994999999pt height=22.465723500000017pt/> [cleanly] disconnects from a peer, it should attempt to "match up" that peer with another node. Since it knows the peers of the peer it's disconnecting from, and the peers of all its other peers, <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width=14.99998994999999pt height=22.465723500000017pt/> can trivially calculate the peer who has an ideal ID closest to the disconnecting peer and currently has either no occupier or a less suitable occupier in that slot. Prior to disconnection, <img src="/tex/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width=14.99998994999999pt height=22.465723500000017pt/> sends a message to the two peers advising them to connect to each other.
-
-Over time, this process causes the Logarithmic Spiderweb to form.
